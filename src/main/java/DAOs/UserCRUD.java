@@ -9,21 +9,18 @@ import java.sql.Statement;
 public class UserCRUD {
 
    public static boolean createUser() {
-       Connection conn = null;
+       Connection conn ;
        conn = DBConnection.getConnection();
        if (conn != null) {
            try {
-               Statement stmt = null;
+               Statement stmt = conn.createStatement();
                System.out.println("Creating statement...");
-               stmt = conn.createStatement();
-               String sql;
-               sql = "SELECT id FROM user";
+               String sql = "SELECT id FROM user";
                ResultSet rs = stmt.executeQuery(sql);
                while (rs.next()) {
                    //Retrieve by column name
                    int id = rs.getInt("id");
                    String name = rs.getString("Name");
-
                    //Display values
                    System.out.print("ID: " + id);
                    System.out.print(", Name: " + name);
@@ -34,6 +31,8 @@ public class UserCRUD {
                conn.close();
            }catch(Exception e){
                e.printStackTrace();
+           }finally {
+
            }
            return true;
        }else

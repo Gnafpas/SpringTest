@@ -17,7 +17,7 @@ class FirstSpecification extends Specification{
       int result = left + right
 
       then:
-      result == 5
+      result == 4
 
   }
 }

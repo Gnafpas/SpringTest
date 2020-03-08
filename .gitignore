@@ -1,0 +1,4 @@
+# file: ~/.gitignore_global
+SpringTest.iml
+.idea
+.settings

@@ -3,17 +3,37 @@ package main.java;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Car {
+public class Car implements CarInterface{
 
-    Wheel wheel;
+    private Wheel wheel;
+    private Driver driver;
 
-    public Car(Wheel wheel){
-         this.wheel = wheel;
+
+    public Car(Driver driver, Wheel weel){
+        this.driver = driver;
+        this.wheel = weel;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
     }
 
 
+    @Override
+    public void speed() {
+
+    }
+
     public Wheel getWheel() {
         return wheel;
+    }
+
+    public int position(int x,int y ){
+        return x+y;
     }
 
     public void setWheel(Wheel wheel) {

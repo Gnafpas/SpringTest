@@ -4,11 +4,14 @@ package main.java;
 import org.springframework.stereotype.Component;
 
 
-@Component
+
 public class Wheel {
 
-    public Wheel(){
+    private int wheelCount;
+
+    public Wheel(int wheelCount){
         System.out.println("Wheel creation");
+        this.wheelCount = wheelCount;
     }
 
     public <typeAny  extends Integer> void  foo2 (typeAny value){
@@ -20,6 +23,13 @@ public class Wheel {
     @Annotations.JsonField
     private  String lastName;
 
+    public int getWheelCount() {
+        return wheelCount;
+    }
+
+    public void setWheelCount(int wheelCount) {
+        this.wheelCount = wheelCount;
+    }
 
     public String getFirstName() {
         return firstName;

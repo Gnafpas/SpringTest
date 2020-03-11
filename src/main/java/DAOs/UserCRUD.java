@@ -15,6 +15,7 @@ import java.util.List;
 public class UserCRUD {
     @Autowired
     private UserRepository repository;
+
        public static boolean getUserJDBC() {
            Connection conn ;
            conn = DBConnection.getConnection();
@@ -48,16 +49,24 @@ public class UserCRUD {
 
         public boolean addUser() {
 
+
             UserBean user = new UserBean();
-            user.setName("sdcas");
+            user.setName("John");
             user.setId(3L);
             repository.save(user);
+
+
             return true;
 
         }
 
         public void showUsers() {
-            List<UserBean> users = repository.findByName("sdcas");
+            List<UserBean> users = repository.custom(5L);
+            for (UserBean u : users) {
+                System.out.println(u.getName());
+            }
+
+            users = repository.findBynameCustom("John");
             for (UserBean u : users) {
                 System.out.println(u.getName());
             }

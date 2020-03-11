@@ -2,21 +2,23 @@ package main.java;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
 
 @Configuration
+@Lazy
 public class AppConfig {
 
 
 
-        @Bean
-        Wheel getWheel (){
-            return new Wheel(4);
-        }
-//
+    @Bean
+    Wheel getWheel (){
+        return new Wheel(4);
+    }
+
 //    @Bean
 //    Car getCar (){
 //        return new Car(getWheel());

@@ -46,4 +46,8 @@ public class Wheel {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public static void bla(int i ){}
+
+
 }

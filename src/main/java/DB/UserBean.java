@@ -2,15 +2,12 @@ package main.java.DB;
 
 
 import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+import javax.persistence.*;
 
 
 @Entity
 @Table(name = "user")
+@NamedQuery(name = "UserBean.findBynameCustom", query = "select u from UserBean u where u.name = ?1")
 public class UserBean  implements Serializable {
 
     private static final long serialVersionUID = -3009157732242241606L;

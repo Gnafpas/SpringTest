@@ -8,9 +8,21 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface UserRepository<U> extends CrudRepository<UserBean, Long>{
+public interface UserRepository<U> extends CrudRepository<UserBean, Long> {
     List findByName(String name);
-//    @Query("SELECT e FROM Employee e WHERE e.age = :age")
-//    public List findByAge(@Param("age") int age);
+    /**
+     * @param id
+     * @return
+     */
+    @Query(value = "SELECT * FROM user u WHERE " +
+            "u.id = :id",
+            nativeQuery = true
+    )
+    List<UserBean> custom(@Param("id") long id);
+
+
+    List < UserBean > findBynameCustom(String name);
+
+
 }
 

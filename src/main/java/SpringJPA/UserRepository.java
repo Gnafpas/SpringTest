@@ -1,4 +1,4 @@
-package main.java.DB;
+package main.java.SpringJPA;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.Query;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository<U> extends CrudRepository<UserBean, Long> {
     List findByName(String name);
+
     /**
      * @param id
      * @return

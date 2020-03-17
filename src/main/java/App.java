@@ -1,13 +1,14 @@
 package main.java;
 
 
-import main.java.DAOs.UserCRUD;
+import main.java.CustomAnnotations.AnnotationImpl;
+import main.java.Lambdas.LambdasImpl;
+import main.java.SpringBeans.SpringBeansImpl;
+import main.java.SpringJPA.JPAImpl;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.integration.core.GenericSelector;
-import org.springframework.integration.selector.MetadataStoreSelector;
 
 
 @SpringBootApplication
@@ -20,38 +21,25 @@ public class App implements CommandLineRunner {
         /**
          * Spring Beans
          */
-        Car car = ctx.getBean(Car.class);
-        car.getWheel().setFirstName("Nafpas");
-        System.out.println("swefdsw "+ car.getWheel().getFirstName());
-
+        SpringBeansImpl.implement(ctx);
         /**
          * Custom Annotations
          */
-        Wheel wheel =new Wheel(4);
-        wheel.setLastName("Nafpaktitis");
-        wheel.setFirstName("George");
-        System.out.println(Annotations.findAnnotatedParameters(wheel));
-
-
-        Wheel wheel2 = ctx.getBean(Wheel.class);
-        System.out.println(wheel2.getWheelCount());
-//        Wheel::bla(1);
-
-        UserCRUD userCRUD = ctx.getBean(UserCRUD.class);
-        userCRUD.showUsers();
-
-
-        GenericSelector<Integer>   bla= (Integer x) -> true;
-        bla.accept(new Integer(5));
-
-//        CarInterface inter = CarInterface::speed(10);
-
+        AnnotationImpl.implement(ctx);
+        /**
+         * Lambdas
+         */
+        LambdasImpl.implement(ctx);
+        /**
+         * SpringJPA
+         */
+        JPAImpl.implement(ctx);
     }
 
 
     @Override
     public void run(String... args) {
-
+        //body of main method will moved to this method
     }
 
 

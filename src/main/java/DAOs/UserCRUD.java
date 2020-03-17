@@ -1,8 +1,8 @@
 package main.java.DAOs;
 
-import main.java.DB.DBConnection;
-import main.java.DB.UserBean;
-import main.java.DB.UserRepository;
+import main.java.SpringJPA.DBJDBCConnection;
+import main.java.SpringJPA.UserBean;
+import main.java.SpringJPA.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,7 +18,7 @@ public class UserCRUD {
 
        public static boolean getUserJDBC() {
            Connection conn ;
-           conn = DBConnection.getConnection();
+           conn = DBJDBCConnection.getConnection();
            if (conn != null) {
                try {
                    Statement stmt = conn.createStatement();
@@ -47,15 +47,12 @@ public class UserCRUD {
                return false;
        }
 
-        public boolean addUser() {
-
+        public boolean addUser(long id, String name) {
 
             UserBean user = new UserBean();
-            user.setName("John");
-            user.setId(3L);
+            user.setName(name);
+            user.setId(id);
             repository.save(user);
-
-
             return true;
 
         }

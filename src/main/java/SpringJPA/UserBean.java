@@ -1,4 +1,4 @@
-package main.java.DB;
+package main.java.SpringJPA;
 
 
 import java.io.Serializable;

@@ -11,7 +11,7 @@
 
 
     <!--<context:annotation-config/>-->
-    <!--<bean id = "springBean" class = "main.java.SpringBean" scope = "singleton">-->
+    <!--<bean id = "springBean" classmain.java.SpringBeans.SpringBeanBean" scope = "singleton">-->
         <!--<property name = "initMessage" value = "Hello World!"/>-->
     <!--</bean>-->
 

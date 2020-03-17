@@ -1,5 +1,6 @@
-package main.java;
+package main.java.SpringConfiguration;
 
+import main.java.SpringBeans.Wheel;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
@@ -29,7 +30,7 @@ public class AppConfig {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUsername("root");
-        dataSource.setPassword("Morrison1991!");
+        dataSource.setPassword("root");
         dataSource.setUrl("jdbc:mysql://localhost:3306/test?autoReconnect=true&useSSL=false");
         return dataSource;
     }

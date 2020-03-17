@@ -1,17 +1,17 @@
-package main.java;
+package main.java.SpringBeans;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class Car implements CarInterface{
+public class Car implements CarInterface {
 
     private Wheel wheel;
     private Driver driver;
 
 
-    public Car(Driver driver, Wheel weel){
+    public Car(Driver driver, Wheel wheel){
         this.driver = driver;
-        this.wheel = weel;
+        this.wheel = wheel;
     }
 
     public Driver getDriver() {

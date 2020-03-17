@@ -1,7 +1,8 @@
 package test.groovy
 
-import main.java.Car
-import main.java.Driver
+import main.java.SpringBeans.Car
+import main.java.SpringBeans.Driver
+import main.java.SpringBeans.Wheel
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -10,6 +11,7 @@ import spock.lang.Unroll
  */
 class FirstSpecification extends Specification{
 
+    @Unroll
     def "one plus one should be equals tow"(){
 
         given:
@@ -29,23 +31,20 @@ class FirstSpecification extends Specification{
     def "Mock driver class"(){
 
         Driver driver = Mock(Driver)
+        Wheel wheel = Mock(Wheel)
+        wheel.wheelCount >> 4
+
         driver.getDriverLicence() >>> ["AE490427","AE490428","AE490429"]
 
-        Car car = new Car(driver)
+        Car car = new Car(driver,wheel)
         car.position(2,5)  >> 5
 
         given:
-            int left = 2
-            int right = 5
-
         when:
             String result = car.getDriver().getDriverLicence()
             String result2 = car.getDriver().getDriverLicence()
-//            car.speed()
             driver.brake()
-
         then:
-//            1 * car.speed()
             1 * driver.brake()
             result == "AE490427"
             result2 == "AE490428"
@@ -59,9 +58,6 @@ class FirstSpecification extends Specification{
     def "Data test"() {
 
         given:
-        int a
-        int b
-        int c
 
         when:
         int result = Math.pow(A, B)
@@ -74,6 +70,8 @@ class FirstSpecification extends Specification{
         1 | 2 | 1
         2 | 2 | 4
         3 | 2 | 9
+        3 | 2 | 9
+
     }
 
 }

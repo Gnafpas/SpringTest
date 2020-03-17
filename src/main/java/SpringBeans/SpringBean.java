@@ -1,4 +1,4 @@
-package main.java;
+package main.java.SpringBeans;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

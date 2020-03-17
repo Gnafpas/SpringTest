@@ -1,4 +1,6 @@
-package main.java;
+package main.java.CustomAnnotations;
+
+import main.java.SpringBeans.Wheel;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -19,7 +21,7 @@ public class Annotations {
         public String value() default "";
     }
 
-    public static Map<String,String> findAnnotatedParameters(Wheel object){
+    public static Map<String,String> findAnnotatedParameters(Object object){
         Map<String, String> jsonElements=null;
         try {
             Class<?> objectClass = requireNonNull(object).getClass();

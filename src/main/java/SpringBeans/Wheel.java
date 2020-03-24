@@ -3,10 +3,17 @@ package main.java.SpringBeans;
 
 import main.java.CustomAnnotations.Annotations;
 
+import java.util.function.Function;
+
 
 public class Wheel {
 
     private int wheelCount;
+
+    public void test(CarInterface car ){
+        car.speed(1);
+
+    }
 
     public Wheel(int wheelCount){
         System.out.println("Wheel creation");

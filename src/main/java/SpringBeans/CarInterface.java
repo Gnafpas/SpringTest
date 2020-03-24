@@ -2,5 +2,5 @@ package main.java.SpringBeans;
 
 public interface CarInterface {
 
-    public void speed();
+    public void speed(int i);
 }

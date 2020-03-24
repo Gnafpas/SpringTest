@@ -24,7 +24,7 @@ public class Car implements CarInterface {
 
 
     @Override
-    public void speed() {
+    public void speed(int i) {
 
     }
 

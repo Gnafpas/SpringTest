@@ -30,7 +30,7 @@ public class AppConfig {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUsername("root");
-        dataSource.setPassword("root");
+        dataSource.setPassword("Morrison1991!");
         dataSource.setUrl("jdbc:mysql://localhost:3306/test?autoReconnect=true&useSSL=false");
         return dataSource;
     }

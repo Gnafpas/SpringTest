@@ -11,6 +11,7 @@ public class LambdasImpl {
 
     public static void implement(ApplicationContext ctx){
         GenericSelector<Integer> bla= (Integer x) -> true;
+        bla::;
         bla.accept(new Integer(5));
 
         Wheel wheel2 = ctx.getBean(Wheel.class);

@@ -15,6 +15,7 @@ import org.springframework.lang.Nullable;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Stream;
 
 /**
  * Created by George on 12/3/20.
@@ -25,7 +26,6 @@ public class LambdasImpl {
 
     public static void implement(ApplicationContext ctx){
         GenericSelector<Integer> bla= (Integer x) -> true;
-        bla::;
         bla.accept(new Integer(5));
 
         Wheel wheel2 = ctx.getBean(Wheel.class);
@@ -42,6 +42,10 @@ public class LambdasImpl {
 //        System.out.println("ascasx "+a);
 
         wheel2.test( ( x) -> System.out.println("Eurikaaa "+ x+1));
+
+
+
+
 
 
         MessageSource m = new MessageSource(){
